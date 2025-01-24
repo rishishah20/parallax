@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        height: 300px;
+        padding: 300px;
+        background-image: url(../javascript/black.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+    .box {
+        height: 200px;
+        width: 200px;
+        background-color: brown;
+    }
+
+    .box:nth-child(2){
+        height: 200px;
+    width: 200px;
+    transition: transform 0.5s, background-color 0.5s;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-image: url('https://images.all-free-download.com/images/thumb/122_pct_supervisor_516161.webp');
+}
+
+.box:nth-child(3) {
+    height: 200px;
+    width: 200px;
+    transition: transform 0.5s, background-color 0.5s;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-image: url('https://images.all-free-download.com/images/thumb/car_street_picture_dynamic_motion_6934674.webp');
+}
+
+
+.down {
+    height: 300px;
+    width: 300px;
+    background-color: chartreuse;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    transition: transform 0.7s, background-color 0.7s;
+    background-image: url('https://images.all-free-download.com/images/thumb/ice_tree_514496.webp');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+</style>
+
+<body>
+    <div class="box" id="demo">edd</div>
+    <div class="box" id="middle-box"></div>
+    <div class="box"></div>
+    <div class="down" id="dow"></div>
+</body>
+
+<script>
+    window.addEventListener("scroll", show);
+  
+    function show() {
+        const header = document.getElementById('demo');
+        const downBox = document.getElementById('dow');
+        
+        if (window.scrollY > 100) {
+            header.style.backgroundColor = "orange"; 
+            header.style.borderRadius = '0px';
+            downBox.style.transform = "translate(50vw, -50%)"; 
+            downBox.style.backgroundColor = "blue"; 
+
+        } else {
+            header.style.backgroundColor = "pink";
+            header.style.borderRadius = "0px";
+            header.style.width = "200px";
+            downBox.style.transform = "translate(-50%, -50%)";
+            downBox.style.backgroundColor = "chartreuse"; 
+
+        }
+    }
+</script>
+</html>
